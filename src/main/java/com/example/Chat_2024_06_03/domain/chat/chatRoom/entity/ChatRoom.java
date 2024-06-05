@@ -31,6 +31,7 @@ public class ChatRoom extends BaseEntity {
     @Builder.Default
     @Getter
     @ToString.Exclude
+    @OrderBy("id DESC")
     private List<ChatMessage> chatMessages = new ArrayList<>();
 
     public ChatRoom(String name) {

@@ -14,6 +14,10 @@
 </form>
 
 <div>
+
+    <div>
+        <button onclick="loadMoreChatMessages();" type="button">더 불러오기</button>
+    </div>
     <ul>
         <li th:each="chatMessage : ${room.chatMessages}">
             <span th:text="${chatMessage.writerName}"></span>
@@ -65,12 +69,31 @@
             response => response.json()
         ).then(
             json => {
-            if ( json.msg ) alert(json.msg);
+            // 아무작업 안해도됌
             }
+
         ).catch(error => alert(error));
 
         form.content.value = '';
         form.content.focus();
 
+    }
+
+    function loadMoreChatMessages(){
+    const action = `/chat/room/${roomId}/messagesAfter/${lastChatMessageId}`;
+
+        fetch(
+            action,
+            {
+                method: 'GET',
+                headers:  {
+                    'accept' : 'application/json',
+                }
+            }
+        ).then(
+            response => response.json()
+        ).then(
+            json => {}
+        ).catch(error => alert(error));
     }
 </script>
