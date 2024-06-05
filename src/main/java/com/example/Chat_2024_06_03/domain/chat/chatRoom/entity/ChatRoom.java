@@ -24,11 +24,8 @@ import static lombok.AccessLevel.PROTECTED;
 @Setter
 @ToString(callSuper = true)
 public class ChatRoom extends BaseEntity {
-
-
     @Getter
     private String name;
-
 
     @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
@@ -40,7 +37,7 @@ public class ChatRoom extends BaseEntity {
         this.name = name;
     }
 
-    public void writeMessage(String writerName, String content) {
+    public ChatMessage writeMessage(String writerName, String content) {
         ChatMessage chatMessage = ChatMessage
                 .builder()
                 .chatRoom(this)
@@ -49,5 +46,7 @@ public class ChatRoom extends BaseEntity {
                 .build();
 
         chatMessages.add(chatMessage);
+
+        return chatMessage;
     }
 }
