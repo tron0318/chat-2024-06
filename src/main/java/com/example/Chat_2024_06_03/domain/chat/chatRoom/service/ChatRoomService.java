@@ -1,6 +1,6 @@
 package com.example.Chat_2024_06_03.domain.chat.chatRoom.service;
 
-import com.example.Chat_2024_06_03.domain.chat.chatRoom.entity.ChatMessage;
+import com.example.Chat_2024_06_03.domain.chat.chatMessage.entity.ChatMessage;
 import com.example.Chat_2024_06_03.domain.chat.chatRoom.entity.ChatRoom;
 import com.example.Chat_2024_06_03.domain.chat.chatRoom.repository.ChatRoomRepository;
 import jakarta.transaction.Transactional;

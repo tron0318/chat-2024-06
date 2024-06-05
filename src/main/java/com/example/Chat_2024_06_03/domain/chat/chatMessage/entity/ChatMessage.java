@@ -1,6 +1,7 @@
-package com.example.Chat_2024_06_03.domain.chat.chatRoom.entity;
+package com.example.Chat_2024_06_03.domain.chat.chatMessage.entity;
 
 
+import com.example.Chat_2024_06_03.domain.chat.chatRoom.entity.ChatRoom;
 import com.example.Chat_2024_06_03.global.jpa.baseEntity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
